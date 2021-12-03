@@ -32,7 +32,7 @@
         const dataArray = new FormData();
         dataArray.append("uploadFile", img);
 
-        let res = await fetch("https://accenture-final.teambolognese.ru/upload", {
+        let res = await fetch("https://final.teambolognese.ru/api/upload", {
             mode: 'cors',
             method: "POST",
             headers: {
