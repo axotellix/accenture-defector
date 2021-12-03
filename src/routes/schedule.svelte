@@ -8,5 +8,5 @@
 </script>
 
 
-<!-- [ TEMPLATE: Monitoring ] -->
-<h1>Monitoring page</h1>
+<!-- [ TEMPLATE: Schedule ] -->
+<h1>Schedule page</h1>

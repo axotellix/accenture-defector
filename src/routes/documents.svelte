@@ -8,5 +8,5 @@
 </script>
 
 
-<!-- [ TEMPLATE: Monitoring ] -->
-<h1>Monitoring page</h1>
+<!-- [ TEMPLATE: Documents ] -->
+<h1>Documents page</h1>
