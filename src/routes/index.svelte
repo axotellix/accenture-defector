@@ -2,12 +2,32 @@
 <!-- [ SCRIPT ] -->
 <script>
 
+    // [ IMPORTS: extensions ]
+    import { createPDF, openPDF } from '$lib/pdf-lib.js';
+    import { renderCanvas } from '$lib/renderCanvas.js';
+
     // [ IMPORTS: system ]
     import { fade } from 'svelte/transition'
+    import { onMount } from 'svelte';
+
+    // [ IMPORTS: components ]
+    import Analytics from '../components/Analytics.svelte';
+    import ProcessSchedule from '../components/ProcessSchedule.svelte';
 
 
     // [ PROPS ]
     let acceptance_complete = false;
+    const analytics = {
+        defects:     true,       // has defects / no defects
+        defect_rate: 0.15,       // percentage
+        invoice:     1200000,    // price of no-defect cargo
+    }
+
+
+    // [ HOOKS ]
+    onMount(() => {
+        renderCanvas();
+    });
 
 </script>
 
@@ -37,48 +57,25 @@
 
         <!-- video canvas & analytics -->
         <div class="monitor">
-            <div class="video"></div>
-            <div class="analytics">
-                <p class = 'caption'>Анализ качества груза:</p>
-                <p class = 'estimation defect'>Обнаружен брак</p>
-
-                <div class="defect-rate">
-                    <img src="/img/circle-progress.png" alt="defect-rate">
-                    <span class="caption">Процент брака</span>
-                </div>
-
-                <p class="loss defect">- 220 000 ₽</p>
+            <div class="video">
+                <video src="/img/stream_example.mov" loop = 'true' muted = 'true' autoplay="autoplay"></video>
             </div>
+            <Analytics { analytics } />
         </div>
 
         <!-- button: complete acceptance -->
         {#if !acceptance_complete}
-            <button on:click|preventDefault={ () => { acceptance_complete = true } } class="CTA complete-acceptance">завершить приемку</button>
+            <button on:click|preventDefault={ () => { acceptance_complete = true ; createPDF() } } class="CTA complete-acceptance">завершить приемку</button>
         {:else}
             <div class="hidden-area">
-                <button class="CTA bg-orange make-invoice">выставить счет</button>
-                <a href = 'suppliers-overview' class="CTA order">доказказать</a>
+                <a href = '' on:click={ openPDF } class="CTA bg-orange make-invoice view-pdf">выставить счет</a>
+                <a href = 'suppliers-overview' class="CTA order">дозаказать</a>
             </div>
         {/if}
+
     </div>
 
     <!-- [ section: process schedule ] -->
-    <div class="process-schedule">
-        <p class = 'caption'>Текущее состояние:</p>
-        <ul>
-            <li class="sched-row active">
-                <span class="time">09:25</span>
-                <span class="descr">Производится разгрузка</span>
-            </li>
-            <li class="sched-row">
-                <span class="time">09:20</span>
-                <span class="descr">Прибыло на место разгрузки</span>
-            </li>
-            <li class="sched-row">
-                <span class="time">07:35</span>
-                <span class="descr">Ожидается груз ...</span>
-            </li>
-        </ul>
-    </div>
+    <ProcessSchedule />
 
 </main>

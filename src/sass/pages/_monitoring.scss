@@ -47,44 +47,20 @@
     @include flex-align(flex-start, center);
 }
 .monitoring .dashboard .monitor .video {
+    position: relative;
     width: 65%;
     aspect-ratio: 6/4;
     border-radius: 6px;
     background: $grey;
     margin-right: var(--m-tiny);
-}
-.monitoring .dashboard .monitor .analytics {
-    width: 30%;
-    aspect-ratio: 9/13;
-    padding: var(--m-tiny);
-    border-radius: 6px;
-    background: $white;
-    @extend .shadow-black;
+    overflow: hidden;
+    @include flex-align;
 
-    .caption {
-        margin: 0; margin-bottom: 7px; color: $grey; font-size: 1.6rem;
-    }
-    .estimation {
-        margin: 0; margin-bottom: 50px; color: $d-grey; font-size: 2rem;
-
-        &.defect    { color: $red   }
-        &.no-defect { color: $green }
-    }
-    .defect-rate {
-        width: 100%;
-        @include flex-align(def, def, column);
-
-        .caption {
-            margin-top: 15px; color: $grey; font-size: 1.6rem;
-        }
-    }
-    .loss {
-        width: 100%;
-        font-size: 2rem;
-        text-align: center;
-
-        &.defect    { color: $red   }
-        &.no-defect { color: $green }
+    video {
+        margin: 0;
+        padding: 0;
+        height: 180%;
+        transform: rotate(-90deg);
     }
 }
 

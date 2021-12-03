@@ -2,8 +2,17 @@
 <!-- [ SCRIPT ] -->
 <script>
 
-    // [ IMPORTS: components ]
-    // import Sidebar from '$components/Sidebar'
+    // [ IMPORTS: stores ]
+    import NavStore from '../stores/NavStore.js';
+
+    // [ FUNCTIONS ]
+    const updateActive = ( route ) => {
+        NavStore.update(() => {
+			return route;
+		});
+    }
+
+
 
 </script>
 
@@ -16,10 +25,10 @@
 
     <!-- section: nav -->
     <nav>
-        <a href="/"              class="nav-link active">мониторинг</a>
-        <a href="/schedule"      class="nav-link">расписание</a>
-        <a href="/notifications" class="nav-link">уведомления</a>
-        <a href="/documents"     class="nav-link">документы</a>
+        <a href="/"              on:click={ () => { updateActive('monitoring') } } class="nav-link {$NavStore === 'monitoring' ? 'active' : ''}" >мониторинг</a>
+        <a href="/schedule"      on:click={ () => { updateActive('schedule') } } class="nav-link {$NavStore === 'schedule' ? 'active' : ''}">расписание</a>
+        <a href="/notifications" on:click={ () => { updateActive('notifications') } } class="nav-link {$NavStore === 'notifications' ? 'active' : ''}">уведомления</a>
+        <a href="/documents"     on:click={ () => { updateActive('documents') } } class="nav-link {$NavStore === 'documents' ? 'active' : ''}">документы</a>
     </nav>
 
     <!-- section: reminder -->

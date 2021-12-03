@@ -2,8 +2,25 @@
 <!-- [ SCRIPT ] -->
 <script>
 
+    // [ IMPORTS: extensions ]
+    import { renderCanvas } from '$lib/renderCanvas.js';
+
+
     // [ IMPORTS: components ]
     import { fade } from 'svelte/transition'
+    import { onMount } from 'svelte';
+
+    const analytics = {
+        defects:     true,       // has defects / no defects
+        defect_rate: 0.15,       // percentage
+        invoice:     1200000,    // price of no-defect cargo
+    }
+
+
+    // [ HOOKS ]
+    onMount(() => {
+        renderCanvas();
+    });
 
 </script>
 
@@ -21,7 +38,6 @@
         <!-- title -->
         <div class="title">
             <p class="title">Рекомендованные поставщики</p>
-            <button class="CTA-small select-all">выбрать всех</button>
         </div>
 
         <!-- supplier cards -->
@@ -49,7 +65,7 @@
                 <!-- supplier info -->
                 <div class="defect-rate">
                     <div class="estimation">
-                        <img src="/img/circle-progress.png" alt="defect-rate">
+                        <canvas class = 'progress' value = { analytics.defect_rate }></canvas>
                         <p class="caption">Процент брака</p>
                     </div>
                     <button class="CTA-small select">выбрать</button>
@@ -78,7 +94,7 @@
                 <!-- supplier info -->
                 <div class="defect-rate">
                     <div class="estimation">
-                        <img src="/img/circle-progress.png" alt="defect-rate">
+                        <canvas class = 'progress' value = { analytics.defect_rate }></canvas>
                         <p class="caption">Процент брака</p>
                     </div>
                     <button class="CTA-small select">выбрать</button>
@@ -107,7 +123,7 @@
                 <!-- supplier info -->
                 <div class="defect-rate">
                     <div class="estimation">
-                        <img src="/img/circle-progress.png" alt="defect-rate">
+                        <canvas class = 'progress' value = { analytics.defect_rate }></canvas>
                         <p class="caption">Процент брака</p>
                     </div>
                     <button class="CTA-small select">выбрать</button>
@@ -136,7 +152,7 @@
                 <!-- supplier info -->
                 <div class="defect-rate">
                     <div class="estimation">
-                        <img src="/img/circle-progress.png" alt="defect-rate">
+                        <canvas class = 'progress' value = { analytics.defect_rate }></canvas>
                         <p class="caption">Процент брака</p>
                     </div>
                     <button class="CTA-small select">выбрать</button>
@@ -153,7 +169,6 @@
         <!-- title -->
         <div class="title">
             <p class="title">Прочие поставщики</p>
-            <button class="CTA-small select-all">выбрать всех</button>
         </div>
 
         <!-- supplier cards -->
@@ -181,7 +196,7 @@
                 <!-- supplier info -->
                 <div class="defect-rate">
                     <div class="estimation">
-                        <img src="/img/circle-progress.png" alt="defect-rate">
+                        <canvas class = 'progress' value = { analytics.defect_rate }></canvas>
                         <p class="caption">Процент брака</p>
                     </div>
                     <button class="CTA-small select">выбрать</button>
@@ -210,7 +225,7 @@
                 <!-- supplier info -->
                 <div class="defect-rate">
                     <div class="estimation">
-                        <img src="/img/circle-progress.png" alt="defect-rate">
+                        <canvas class = 'progress' value = { analytics.defect_rate }></canvas>
                         <p class="caption">Процент брака</p>
                     </div>
                     <button class="CTA-small select">выбрать</button>

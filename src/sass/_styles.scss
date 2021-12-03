@@ -48,6 +48,10 @@ a {
     border-radius: 3px;
 }
 
+.progress {
+    @include flex-align;
+}
+
 
 // [ CUSTOMS ]
 .shadow-black { 
