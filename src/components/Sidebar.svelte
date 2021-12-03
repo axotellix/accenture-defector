@@ -25,7 +25,7 @@
     <!-- section: reminder -->
     <div class="reminder">
 
-        <div class="time-badge">
+        <div class="time-badge badge">
             <p>17:40</p>
         </div>
 

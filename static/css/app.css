@@ -531,8 +531,10 @@ a {
   color: #414A63;
 }
 
-.CTA {
-  margin-bottom: 10px;
+.CTA, .CTA-small {
+  max-width: -webkit-max-content !important;
+  max-width: -moz-max-content !important;
+  max-width: max-content !important;
   padding: 17px 20px;
   color: #FFFFFF;
   font-size: 1.8rem;
@@ -542,18 +544,42 @@ a {
   -webkit-transition: opacity 0.25s;
   transition: opacity 0.25s;
 }
-.CTA:hover {
+.CTA:hover, .CTA-small:hover {
   opacity: 0.9;
 }
 
-.shadow-black, .monitoring .dashboard .monitor .analytics, aside .reminder {
+.CTA-small {
+  padding: 10px 15px;
+}
+
+.badge {
+  max-width: -webkit-max-content !important;
+  max-width: -moz-max-content !important;
+  max-width: max-content !important;
+  padding: 5px 10px;
+  color: #FFFFFF;
+  font-size: 1.6rem;
+  background: #EC865B !important;
+  border-radius: 3px;
+}
+
+.shadow-black, .suppliers-overview .supplier-card, .monitoring .dashboard .monitor .analytics, aside .reminder {
   -webkit-box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.05);
           box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.05);
 }
 
-.shadow-purple, aside nav .nav-link.active, .CTA {
+.shadow-purple, aside nav .nav-link.active, .CTA, .CTA-small {
   -webkit-box-shadow: 0 0 11px 0 rgba(198, 91, 236, 0.5);
           box-shadow: 0 0 11px 0 rgba(198, 91, 236, 0.5);
+}
+
+.shadow-orange, .CTA.bg-orange, .bg-orange.CTA-small {
+  -webkit-box-shadow: 0 0 11px 0 rgba(236, 134, 91, 0.4);
+          box-shadow: 0 0 11px 0 rgba(236, 134, 91, 0.4);
+}
+
+.bg-orange {
+  background: #EC865B;
 }
 
 main {
@@ -654,12 +680,7 @@ aside .reminder p, aside .reminder div {
 }
 
 aside .reminder .time-badge {
-  padding: 5px 10px;
-  background: #C65BEC;
-  border-radius: 3px;
   margin-bottom: 15px;
-  color: #FFFFFF;
-  font-size: 1.6rem;
 }
 
 aside .reminder .title {
@@ -815,6 +836,21 @@ main {
   color: #5EDB98;
 }
 
+.monitoring .dashboard .hidden-area {
+  gap: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .monitoring .process-schedule {
   margin: var(--m-big) 0;
 }
@@ -841,4 +877,149 @@ main {
   display: inline-block;
   width: 60px;
   margin-right: 20px;
+}
+
+.suppliers-overview .suppliers {
+  border-bottom: 2px solid rgba(112, 130, 166, 0.12);
+  margin-bottom: 60px;
+  padding-bottom: 60px;
+}
+.suppliers-overview .suppliers:last-of-type {
+  border-bottom: none;
+}
+
+.suppliers-overview .suppliers div.title {
+  margin-bottom: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.suppliers-overview .suppliers div.title p.title {
+  color: #414A63;
+  font-size: 2rem;
+  margin-right: 30px;
+}
+
+.suppliers-overview .supplier-cards {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -ms-flex-line-pack: start;
+      align-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.suppliers-overview .supplier-card {
+  width: 500px;
+  height: 250px;
+  background: #FFFFFF;
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -ms-flex-line-pack: stretch;
+      align-content: stretch;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+.suppliers-overview .supplier-card .supplier-info {
+  width: 320px;
+  padding: 25px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-line-pack: start;
+      align-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+.suppliers-overview .supplier-card .supplier-info .supplier-title {
+  margin: 0;
+  color: #414A63;
+  font-size: 1.6rem;
+}
+.suppliers-overview .supplier-card .supplier-info .supplier-title span {
+  display: block;
+  margin-bottom: 5px;
+  color: #7082A6;
+  font-size: 1.4rem;
+}
+.suppliers-overview .supplier-card .supplier-info .supplier-metrics span {
+  display: block;
+  margin-bottom: 5px;
+  color: #7082A6;
+  font-size: 1.6rem;
+}
+.suppliers-overview .supplier-card .defect-rate {
+  width: 180px;
+  padding: 25px;
+  border-left: 2px solid rgba(112, 130, 166, 0.12);
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.suppliers-overview .supplier-card .defect-rate .estimation {
+  color: #7082A6;
+  font-size: 1.4rem;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.suppliers-overview .supplier-card .defect-rate .estimation img {
+  width: 70%;
+}
+.suppliers-overview .supplier-card .select {
+  width: 100%;
 }

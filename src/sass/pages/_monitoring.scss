@@ -88,6 +88,11 @@
     }
 }
 
+.monitoring .dashboard .hidden-area {
+    gap: 20px;
+    @include flex-align(flex-start);
+}
+
 
 // [ section: process schedule ]
 .monitoring .process-schedule {

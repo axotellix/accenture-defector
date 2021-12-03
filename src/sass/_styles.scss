@@ -13,8 +13,9 @@ a {
     color: $d-grey;
 }
 
+// CTA buttons
 .CTA {
-    margin-bottom: 10px;
+    max-width: max-content !important;
     padding: 17px 20px;
     color: $white;
     font-size: 1.8rem;
@@ -24,10 +25,29 @@ a {
     transition: opacity 0.25s;
     @extend .shadow-purple;
 
+    &.bg-orange {
+        @extend .shadow-orange;
+    }
+
     &:hover {
         opacity: 0.9;
     }
 }
+.CTA-small {
+    @extend .CTA;
+    padding: 10px 15px;
+}
+
+// badges
+.badge {
+    max-width: max-content !important;
+    padding: 5px 10px;
+    color: $white;
+    font-size: 1.6rem;
+    background: $orange !important;
+    border-radius: 3px;
+}
+
 
 // [ CUSTOMS ]
 .shadow-black { 
@@ -35,6 +55,13 @@ a {
 }
 .shadow-purple { 
     box-shadow: 0 0 11px 0 rgba($purple, 0.5);
+}
+.shadow-orange { 
+    box-shadow: 0 0 11px 0 rgba($orange, 0.4);
+}
+
+.bg-orange { 
+    background: $orange;
 }
 
 
