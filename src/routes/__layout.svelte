@@ -14,6 +14,4 @@
 <Sidebar />
 
 <!-- [ partial: main ] -->
-<main>
-    <slot></slot>
-</main>
+<slot></slot>

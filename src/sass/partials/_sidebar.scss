@@ -11,8 +11,8 @@ aside {
 // [ section: logo ]
 aside .logo {
     font-size: 1.8rem;
-    width: 100%;
-    margin-bottom: var(--m-big);
+    width: 100%; margin-top: 0;
+    margin-bottom: varset('--m-big + 10px');
     text-align: center;
 }
 

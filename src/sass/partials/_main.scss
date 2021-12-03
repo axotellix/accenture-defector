@@ -2,7 +2,7 @@
 // [ CHAT ]
 main {
     width: calc(100% - 270px);
-    margin: 0;
+    margin: 0; padding: var(--m-tiny) var(--m-big);
     margin-left: 270px;
     min-width: 550px; min-height: 550px;
 }

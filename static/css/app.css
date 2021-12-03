@@ -531,12 +531,27 @@ a {
   color: #414A63;
 }
 
-.shadow-black, aside .reminder {
+.CTA {
+  margin-bottom: 10px;
+  padding: 17px 20px;
+  color: #FFFFFF;
+  font-size: 1.8rem;
+  border-radius: 4px;
+  background: #C65BEC;
+  cursor: pointer;
+  -webkit-transition: opacity 0.25s;
+  transition: opacity 0.25s;
+}
+.CTA:hover {
+  opacity: 0.9;
+}
+
+.shadow-black, .monitoring .dashboard .monitor .analytics, aside .reminder {
   -webkit-box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.05);
           box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.05);
 }
 
-.shadow-purple, aside nav .nav-link.active {
+.shadow-purple, aside nav .nav-link.active, .CTA {
   -webkit-box-shadow: 0 0 11px 0 rgba(198, 91, 236, 0.5);
           box-shadow: 0 0 11px 0 rgba(198, 91, 236, 0.5);
 }
@@ -565,7 +580,8 @@ aside {
 aside .logo {
   font-size: 1.8rem;
   width: 100%;
-  margin-bottom: var(--m-big);
+  margin-top: 0;
+  margin-bottom: calc( var(--m-big) + 10px);
   text-align: center;
 }
 
@@ -661,7 +677,168 @@ aside .reminder .supplier {
 main {
   width: calc(100% - 270px);
   margin: 0;
+  padding: var(--m-tiny) var(--m-big);
   margin-left: 270px;
   min-width: 550px;
   min-height: 550px;
+}
+
+.monitoring .zone-tabs {
+  margin: 0;
+  margin-bottom: var(--m-big);
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -ms-flex-line-pack: start;
+      align-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.monitoring .zone-tabs .tab {
+  padding: 0 12px;
+  padding-bottom: 10px;
+  margin-right: var(--m-medium);
+  color: #7082A6;
+  font-size: 1.6rem;
+  border-bottom: 3px solid transparent;
+  cursor: pointer;
+  -webkit-transition: opacity 0.25s, border-color 0.25s;
+  transition: opacity 0.25s, border-color 0.25s;
+}
+.monitoring .zone-tabs .tab:hover {
+  opacity: 0.7;
+  border-color: rgba(198, 91, 236, 0.2);
+}
+.monitoring .zone-tabs .tab.active {
+  color: #414A63;
+  opacity: 1;
+  border-color: #C65BEC;
+}
+
+.monitoring .dashboard .process-info {
+  color: #414A63;
+  font-size: 2rem;
+}
+.monitoring .dashboard .process-info .supplier {
+  display: block;
+  margin-bottom: 5px;
+  color: #7082A6;
+  font-size: 1.6rem;
+}
+
+.monitoring .dashboard .monitor {
+  margin-bottom: var(--m-medium);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.monitoring .dashboard .monitor .video {
+  width: 65%;
+  aspect-ratio: 6/4;
+  border-radius: 6px;
+  background: #7082A6;
+  margin-right: var(--m-tiny);
+}
+
+.monitoring .dashboard .monitor .analytics {
+  width: 30%;
+  aspect-ratio: 9/13;
+  padding: var(--m-tiny);
+  border-radius: 6px;
+  background: #FFFFFF;
+}
+.monitoring .dashboard .monitor .analytics .caption {
+  margin: 0;
+  margin-bottom: 7px;
+  color: #7082A6;
+  font-size: 1.6rem;
+}
+.monitoring .dashboard .monitor .analytics .estimation {
+  margin: 0;
+  margin-bottom: 50px;
+  color: #414A63;
+  font-size: 2rem;
+}
+.monitoring .dashboard .monitor .analytics .estimation.defect {
+  color: #FF7A92;
+}
+.monitoring .dashboard .monitor .analytics .estimation.no-defect {
+  color: #5EDB98;
+}
+.monitoring .dashboard .monitor .analytics .defect-rate {
+  width: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.monitoring .dashboard .monitor .analytics .defect-rate .caption {
+  margin-top: 15px;
+  color: #7082A6;
+  font-size: 1.6rem;
+}
+.monitoring .dashboard .monitor .analytics .loss {
+  width: 100%;
+  font-size: 2rem;
+  text-align: center;
+}
+.monitoring .dashboard .monitor .analytics .loss.defect {
+  color: #FF7A92;
+}
+.monitoring .dashboard .monitor .analytics .loss.no-defect {
+  color: #5EDB98;
+}
+
+.monitoring .process-schedule {
+  margin: var(--m-big) 0;
+}
+
+.monitoring .process-schedule .caption {
+  margin: 0;
+  margin-bottom: 25px;
+  color: #7082A6;
+  font-size: 1.6rem;
+}
+
+.monitoring .process-schedule .sched-row {
+  margin: 0;
+  margin-bottom: 15px;
+  color: #7082A6;
+  font-size: 1.8rem;
+}
+.monitoring .process-schedule .sched-row.active {
+  margin-bottom: 25px;
+  color: #414A63;
+  font-size: 2rem;
+}
+.monitoring .process-schedule .sched-row .time {
+  display: inline-block;
+  width: 60px;
+  margin-right: 20px;
 }
