@@ -16,7 +16,7 @@
 
     <!-- section: nav -->
     <nav>
-        <a href="/"              class="nav-link">мониторинг</a>
+        <a href="/"              class="nav-link active">мониторинг</a>
         <a href="/schedule"      class="nav-link">расписание</a>
         <a href="/notifications" class="nav-link">уведомления</a>
         <a href="/documents"     class="nav-link">документы</a>
@@ -24,7 +24,14 @@
 
     <!-- section: reminder -->
     <div class="reminder">
-        reminder
+
+        <div class="time-badge">
+            <p>17:40</p>
+        </div>
+
+        <p class = 'title'>Прием гречки</p>
+        <p class = 'supplier'>ООО Белкин и Стрелкин</p>
+
     </div>
 
 </aside>

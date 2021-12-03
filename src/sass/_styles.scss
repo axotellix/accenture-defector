@@ -1,0 +1,36 @@
+
+// [ GENERAL ]
+html { font: $font; font-weight: $f-normal; font-weight: $f-medium; }
+body {
+    background: $d-white;
+    color: $d-grey;
+    font-smooth: antialiased;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden !important;
+}
+
+a { 
+    color: $d-grey;
+}
+
+// [ CUSTOMS ]
+.shadow-black { 
+    box-shadow: 0 0 12px 0 rgba(#000, 0.05);
+}
+.shadow-purple { 
+    box-shadow: 0 0 11px 0 rgba($purple, 0.5);
+}
+
+
+// [ MAIN ]
+main {
+    width: 100%; height: auto; min-height: 100vh;
+}
+
+svg.ico {
+    width: 22px; height: 22px; 
+}
+
+
+
+
